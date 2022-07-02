@@ -1,10 +1,14 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, Text} from 'react-native';
+import FIcon from 'react-native-vector-icons/MaterialIcons';
 
 export default function TodoItem({pressHandler, item}) {
   return (
     <TouchableOpacity onPress={() => pressHandler(item.key)}>
-      <Text style={styles.item}>{item.text}</Text>
+      <Text style={styles.item}>
+        <FIcon name="delete" size={24} color="coral" padding="" />
+        {+item.text}
+      </Text>
     </TouchableOpacity>
   );
 }
